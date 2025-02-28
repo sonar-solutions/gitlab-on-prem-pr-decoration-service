@@ -18,7 +18,7 @@ This is a simple Flask app that listens for incoming webhooks from SonarCloud an
 2. Build the Docker image:
 
     ```sh
-    docker-compose build
+    docker build -t flask-pr-service .
     ```
 
 ## Usage
