@@ -1,0 +1,71 @@
+{
+    "serverUrl": "https://sonarcloud.io",
+    "taskId": "AZTwywrkx6V7L5hvo37z",
+    "status": "SUCCESS",
+    "analysedAt": "2025-02-10T16:56:02+0000",
+    "revision": "efd2fc31894d5670622eb164163cb9518557a308",
+    "changedAt": "2025-02-10T16:56:02+0000",
+    "project": {
+      "key": "test_gitlab-on-prem",
+      "name": "GitLab On Prem",
+      "url": "https://sonarcloud.io/dashboard?id=test_gitlab-on-prem"
+    },
+    "branch": {
+      "name": "2",
+      "type": "PULL_REQUEST",
+      "isMain": false,
+      "url": "https://sonarcloud.io/dashboard?id=test_gitlab-on-prem&pullRequest=2"
+    },
+    "qualityGate": {
+      "name": "Sonar way",
+      "status": "ERROR",
+      "conditions": [
+        {
+          "metric": "new_reliability_rating",
+          "operator": "GREATER_THAN",
+          "value": "1",
+          "status": "OK",
+          "errorThreshold": "1"
+        },
+        {
+          "metric": "new_security_rating",
+          "operator": "GREATER_THAN",
+          "value": "5",
+          "status": "ERROR",
+          "errorThreshold": "1"
+        },
+        {
+          "metric": "new_maintainability_rating",
+          "operator": "GREATER_THAN",
+          "value": "1",
+          "status": "OK",
+          "errorThreshold": "1"
+        },
+        {
+          "metric": "new_coverage",
+          "operator": "LESS_THAN",
+          "value": "0.0",
+          "status": "ERROR",
+          "errorThreshold": "80"
+        },
+        {
+          "metric": "new_duplicated_lines_density",
+          "operator": "GREATER_THAN",
+          "value": "0.0",
+          "status": "OK",
+          "errorThreshold": "3"
+        },
+        {
+          "metric": "new_security_hotspots_reviewed",
+          "operator": "LESS_THAN",
+          "value": "0.0",
+          "status": "ERROR",
+          "errorThreshold": "100"
+        }
+      ]
+    },
+    "properties": {
+      "sonar.analysis.gitlabProjectId": "1",
+      "sonar.analysis.mergeRequestId": "2"
+    }
+  }
