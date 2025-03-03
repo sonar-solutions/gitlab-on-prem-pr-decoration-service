@@ -1,6 +1,6 @@
 # Flask PR Service
 
-This is a simple Flask app that listens for incoming webhooks from SonarCloud and posts a comment to a GitLab merge request with the SonarCloud analysis results. The app extracts the project name, branch name, quality gate status, and other relevant data from the webhook payload and generates a comment based on the analysis results. The comment includes the project name, branch name, quality gate status, and a list of metrics that failed the quality gate. The app also extracts the GitLab project ID and merge request IID from the webhook payload and uses them to post a comment to the corresponding merge request. The app checks if an existing comment with the specified identifier already exists and updates it if necessary.
+This is a simple Flask app that listens for incoming webhooks from SonarCloud and posts a comment to a GitLab merge request with the SonarCloud analysis results. The app extracts relevant data from the webhook payload and generates a comment based on the analysis results. The comment includes the project name, branch name, quality gate status, and a list of metrics that failed the quality gate. The app extracts some custom set properties (GitLab project ID and merge request IID) from the webhook payload and uses them to post a comment to the corresponding merge request. It also checks if an existing comment with the specified identifier already exists and updates it if necessary.
 
 ## Prerequisites
 
@@ -50,4 +50,4 @@ The following environment variables are used by the service:
 `GITLAB_TOKEN`: The GitLab private token for authentication.
 
 ### Notice
-This is an example setup and may require modifications to handle custom quality gates. If you have set up a custom quality gate, you may need to modify the generate_comment function in pr-service.py to handle the custom conditions.
+This setup assumes the project is using the default "Sonar Way" quality gate and may require modifications to handle custom quality gates. If you have added additional conditions to your quality gate, you may need to modify the generate_comment function in pr-service.py to handle the custom conditions.
