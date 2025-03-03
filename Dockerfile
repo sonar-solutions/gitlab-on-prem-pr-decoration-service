@@ -12,6 +12,15 @@ COPY pyproject.toml ./
 # Install the dependencies
 RUN poetry install --no-root
 
+# Create a non-root user and group
+RUN addgroup --system nonroot && adduser --system --ingroup nonroot nonroot
+
+# Change ownership of the working directory
+RUN chown -R nonroot:nonroot /app
+
+# Switch to the non-root user
+USER nonroot
+
 # Copy the Flask app
 COPY pr-service.py .
 
