@@ -2,6 +2,8 @@
 
 This is a simple Flask app that listens for incoming webhooks from SonarCloud and posts a comment to a GitLab merge request with the SonarCloud analysis results. The app extracts relevant data from the webhook payload and generates a comment based on the analysis results. The comment includes the project name, branch name, quality gate status, and a list of metrics that failed the quality gate. The app extracts some custom set properties (GitLab project ID and merge request IID) from the webhook payload and uses them to post a comment to the corresponding merge request. It also checks if an existing comment with the specified identifier already exists and updates it if necessary.
 
+> **Note:** This solution is provided "as is" without any warranties or guarantees. Use at your own risk.
+
 ![Diagram](OnPremDevOpsDiagram.png)
 
 ## Prerequisites
